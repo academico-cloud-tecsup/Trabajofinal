@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Snake con Efecto Láser</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="gameContainer">
+      <div id="gameArea">
+        <div id="apple"></div>
+        <div id="score">Puntuación: 0</div>
+        <div id="milestone-gif"></div>
+      </div>
+    </div>
+    <nav id="nav-bar">
+      <button id="up-button">↑</button>
+      <button id="left-button">←</button>
+      <button id="right-button">→</button>
+      <button id="down-button">↓</button>
+    </nav>
+    <audio id="eat-sound" src="pj3.mp3"></audio>
+
+    <!-- Nuevo elemento para el efecto láser -->
+    <div class="page page-laser-to-text" style="display: none">
+      <input
+        id="laser-input"
+        type="text"
+        maxlength="24"
+        placeholder="Pide un deseo"
+      />
+      <canvas id="laser-canvas"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

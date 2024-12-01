@@ -1,0 +1,245 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("https://i.pinimg.com/originals/91/f9/53/91f9532a5c860eb621e7f4862a258e77.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 10px 0; /* Reduced padding */
+  box-sizing: border-box;
+}
+
+#gameArea {
+  width: 100vw;
+  height: 73vh; /* Reduced height */
+  max-width: 500px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  margin-bottom: 5px; /* Reduced margin */
+}
+
+.pokemon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pokemon.right {
+  background-image: url("harry.gif");
+}
+
+.pokemon.left {
+  background-image: url("harry.gif");
+  transform: scaleX(-1);
+}
+
+.pokemon.up {
+  background-image: url("harry.gif");
+  transform: rotate(-90deg);
+}
+
+.pokemon.down {
+  background-image: url("harry.gif");
+  transform: rotate(90deg);
+}
+
+#apple {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWR4OW5nb2NoOTEzbjZuMmphMjY3djdlbndremZpNGdpMXlkdDhleCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XMasZzurdLwATHAS3N/giphy.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+  color: rgb(99, 97, 35);
+  text-shadow: 1px 1px 2px rgba(206, 193, 55, 0.5);
+  z-index: 10;
+}
+
+#nav-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+  width: 90vw;
+  max-width: 300px;
+  margin-bottom: 80px; /* Increased to 60px to add more space below buttons */
+  justify-content: center; /* Center the grid horizontally */
+  align-content: center; /* Center the grid vertically */
+}
+
+#nav-bar button {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 8px;
+  touch-action: manipulation;
+  box-shadow: 0 5px 0 #b0b0b0, 0 6px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease;
+  position: relative;
+  top: 0;
+  justify-self: center; /* Center each button in its grid cell */
+  align-self: center; /* Center each button in its grid cell */
+}
+
+#nav-bar button:active {
+  top: 3px;
+  box-shadow: 0 2px 0 #b0b0b0, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#up-button {
+  grid-area: 1 / 2 / 2 / 3;
+}
+#left-button {
+  grid-area: 2 / 1 / 3 / 2;
+}
+#right-button {
+  grid-area: 2 / 3 / 3 / 4;
+}
+#down-button {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+#milestone-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  display: none;
+  z-index: 20;
+  font-family: "Harry Potter", sans-serif; /* Asegúrate de incluir una fuente adecuada */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+#milestone-gif.large {
+  width: 80%;
+  height: 80%;
+  max-width: none;
+  max-height: none;
+}
+
+@media (max-height: 600px) {
+  #gameContainer {
+    height: 75vh;
+  }
+
+  #nav-bar {
+    margin-top: 5px;
+  }
+
+  #nav-bar button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) {
+  #gameContainer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  #gameArea {
+    width: 70vw;
+    height: 90vh;
+    margin-bottom: 0;
+  }
+
+  #nav-bar {
+    width: 25vw;
+    height: 80vh;
+    margin-bottom: 80px; /* Maintain 60px space at the bottom */
+    margin-left: 5px; /* Added margin to separate from game area */
+  }
+}
+.page-laser-to-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-laser-to-text canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#laser-input {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  display: block;
+  outline: none;
+  background-color: rgba(38, 50, 56, 0.2);
+  color: #ffffff;
+  border: none;
+  width: 50%;
+  min-width: 300px;
+  max-width: 100%;
+  margin: auto;
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  padding: 0 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#laser-input::placeholder {
+  color: #999;
+}
+
+#laser-input:focus {
+  border-color: #1b1d1f;
+}
